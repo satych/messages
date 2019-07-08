@@ -1,0 +1,79 @@
+<html>
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<style>
+.wrapper{
+   margin:40px;
+}
+.dispmsg{
+   margin:50px;
+   
+   border:2px solid blue;
+}
+.meesag{
+padding:90px;
+
+}
+.nm {
+
+}
+.content{
+	border:1px solid #000;
+	display:inline-block;
+	padding:5px 0px;
+	text-align:center;
+
+	float:left;
+	width:33%;
+	margin:2% 0.15%;
+	
+}
+
+</style>
+</head>
+
+<body>
+       <div class= "wrapper">
+	      <div class="container">
+		      <div class ="mess">
+                  <textarea class="form-control"rows="5" id="message" placeholder = "Message:"></textarea><br>
+                     Name:<input type="text" class = "form-control" name="myname" id="name"><br>	
+                          <button class="btn btn-primary">Add</button>				 
+			  </div>
+		  </div>
+	  </div>
+	  
+	  </div>
+
+	       <script>
+	        var message = document.querySelector('#message');
+			var mine = document.querySelector('#name');
+			
+			
+			document.querySelector('button').addEventListener('click',function(e){
+			var msg = document.createElement('div');
+				if(message.value!= "" && mine.value!=""){
+					msg.innerHTML = msg.innerHTML+message.value + "<br>";
+					msg.innerHTML = msg.innerHTML+mine.value+"<br>";
+					message.value = "";	
+					mine.value = "";
+					msg.setAttribute('class','content');
+				
+		          }
+			    else{
+				   alert("Please Enter the value");
+			    }
+				document.querySelector('.container').appendChild(msg);
+			});
+			
+	   
+	 </script>
+</body>
+
+
+
+</html>
